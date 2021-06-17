@@ -13,6 +13,16 @@ using System.IO;
 
 namespace dtest
 {
+
+    //temp
+    public static class ExpandMethod
+    {
+        public static int GetLine(this string a)
+        {
+            return 0;
+        }
+    }
+
     class Program
     {
         private DiscordSocketClient _client;
