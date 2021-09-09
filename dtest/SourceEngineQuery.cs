@@ -43,7 +43,6 @@ namespace dtest
 
 
 			ByteReader reader = new ByteReader();
-			byte[] recvData = null;
 			try
 			{
 				cli.Send(Packet, packetsize, ip, port);

@@ -14,13 +14,21 @@ namespace dtest
     public class MessageTracker
     {
         static public MessageTracker inst = new MessageTracker();
+		public static MessageTracker GetInstance()
+		{
+			return inst;
+		}
 
 		Dictionary<ulong, HashSet<ulong>> subs;
 
         public MessageTracker()
         {
-            LoadSetting();
+            
         }
+		public void Init()
+		{
+			LoadSetting();
+		}
 
         void LoadSetting()
         {
@@ -39,7 +47,7 @@ namespace dtest
 					}
 				}					
 			}
-			catch (Exception ex) { };
+			catch (Exception) { };
 		}
 
 		void SaveSetting()
@@ -79,6 +87,11 @@ namespace dtest
 
 
         }
+		
+		public void OnCommand(SocketMessage message , string args)
+		{
+
+		}
 
 		public void Commands(SocketMessage message, string[] cmd)
 		{
